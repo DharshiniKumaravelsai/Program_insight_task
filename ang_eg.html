@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="">
+
+<style>
+#outer{
+     text-align:left;
+	 text-decoration:solid;
+	 font-family:monospace;
+	 background-color:  #A3F1F6;
+     width: 300px;
+	 border-radius:10%;
+    border: 3px solid #7D2E77;
+    padding: 25px 25px;
+    margin: 25px 25px;		
+}
+.textbox{
+    width:300px;
+	height:20px;
+	border-radius:15%;
+	float:right;
+}
+
+</style>
+<center>
+<div id="outer">
+
+ <form>
+    First Input: <input type="text" ng-model="firstInput" class="textbox"><br><br><br>
+	Second Input: <input type="text" ng-model="secondInput" class="textbox">
+ <br>
+ <br><br>
+  <input type="radio" ng-model="myVar" value="add">Addition
+  <hr>
+  <input type="radio" ng-model="myVar" value="sub">Subtraction
+  <hr>
+  <input type="radio" ng-model="myVar" value="mul">Multiplication
+  <hr>
+  <input type="radio" ng-model="myVar" value="div">Division
+</form>
+
+<div ng-switch="myVar">
+  <div ng-switch-when="add">
+     <h1>Equals:{{  (firstInput*1) + (secondInput*1) }}</h1>
+  </div>
+  <div ng-switch-when="sub">
+     <h1>Equals:{{  (firstInput*1) - (secondInput*1) }}</h1>
+  </div>
+  <div ng-switch-when="mul">
+  <h1>Equals:{{  (firstInput*1) * (secondInput*1) }}</h1>
+  </div>
+   <div ng-switch-when="div">
+  <h1>Equals:{{  (firstInput*1) / (secondInput*1) }}</h1>
+  </div>
+</div>
+
+</div>
+</center>
+
+</body>
+</html>
